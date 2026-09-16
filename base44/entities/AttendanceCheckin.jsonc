@@ -1,0 +1,48 @@
+{
+  "name": "AttendanceCheckin",
+  "type": "object",
+  "properties": {
+    "subject_id": {
+      "type": "string",
+      "description": "Reference to the subject"
+    },
+    "subject_name": {
+      "type": "string",
+      "description": "Denormalized subject name"
+    },
+    "timetable_id": {
+      "type": "string",
+      "description": "Reference to the timetable slot"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Check-in date"
+    },
+    "status": {
+      "type": "string",
+      "description": "Attendance status",
+      "enum": [
+        "present",
+        "absent"
+      ],
+      "default": "present"
+    }
+  },
+  "required": [
+    "subject_name",
+    "date",
+    "status"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

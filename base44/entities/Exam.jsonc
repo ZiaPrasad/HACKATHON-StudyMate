@@ -1,0 +1,54 @@
+{
+  "name": "Exam",
+  "type": "object",
+  "properties": {
+    "subject_id": {
+      "type": "string",
+      "description": "Reference to the subject"
+    },
+    "subject_name": {
+      "type": "string",
+      "description": "Denormalized subject name"
+    },
+    "title": {
+      "type": "string",
+      "description": "Exam title"
+    },
+    "exam_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Exam date"
+    },
+    "start_time": {
+      "type": "string",
+      "description": "Start time HH:MM"
+    },
+    "end_time": {
+      "type": "string",
+      "description": "End time HH:MM"
+    },
+    "location": {
+      "type": "string",
+      "description": "Exam location"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Exam notes"
+    }
+  },
+  "required": [
+    "title",
+    "exam_date"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

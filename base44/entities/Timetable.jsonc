@@ -1,0 +1,63 @@
+{
+  "name": "Timetable",
+  "type": "object",
+  "properties": {
+    "subject_id": {
+      "type": "string",
+      "description": "Reference to the subject"
+    },
+    "subject_name": {
+      "type": "string",
+      "description": "Denormalized subject name"
+    },
+    "day_of_week": {
+      "type": "string",
+      "description": "Day of the week",
+      "enum": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ]
+    },
+    "start_time": {
+      "type": "string",
+      "description": "Start time HH:MM"
+    },
+    "end_time": {
+      "type": "string",
+      "description": "End time HH:MM"
+    },
+    "room_number": {
+      "type": "string",
+      "description": "Room / hall number"
+    },
+    "faculty_name": {
+      "type": "string",
+      "description": "Faculty name for this slot"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Slot notes"
+    }
+  },
+  "required": [
+    "subject_name",
+    "day_of_week",
+    "start_time"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

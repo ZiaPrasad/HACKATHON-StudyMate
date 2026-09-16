@@ -1,0 +1,39 @@
+{
+  "name": "Reminder",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Reminder title"
+    },
+    "description": {
+      "type": "string",
+      "description": "Reminder details"
+    },
+    "reminder_time": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When to remind (ISO datetime)"
+    },
+    "completed": {
+      "type": "boolean",
+      "description": "Whether the reminder was dismissed",
+      "default": false
+    }
+  },
+  "required": [
+    "title",
+    "reminder_time"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

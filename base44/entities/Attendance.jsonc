@@ -1,0 +1,48 @@
+{
+  "name": "Attendance",
+  "type": "object",
+  "properties": {
+    "subject_id": {
+      "type": "string",
+      "description": "Reference to the subject"
+    },
+    "subject_name": {
+      "type": "string",
+      "description": "Denormalized subject name"
+    },
+    "classes_held": {
+      "type": "number",
+      "description": "Total classes held",
+      "default": 0
+    },
+    "classes_attended": {
+      "type": "number",
+      "description": "Classes attended",
+      "default": 0
+    },
+    "percentage": {
+      "type": "number",
+      "description": "Attendance percentage",
+      "default": 0
+    },
+    "alert_threshold": {
+      "type": "number",
+      "description": "Per-subject alert threshold",
+      "default": 75
+    }
+  },
+  "required": [
+    "subject_name"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

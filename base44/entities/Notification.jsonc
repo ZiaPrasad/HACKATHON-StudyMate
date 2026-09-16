@@ -1,0 +1,57 @@
+{
+  "name": "Notification",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Notification title"
+    },
+    "message": {
+      "type": "string",
+      "description": "Notification body"
+    },
+    "type": {
+      "type": "string",
+      "description": "Notification category",
+      "enum": [
+        "class",
+        "assignment",
+        "exam",
+        "attendance",
+        "reminder",
+        "system",
+        "recommendation"
+      ],
+      "default": "system"
+    },
+    "is_read": {
+      "type": "boolean",
+      "description": "Whether read",
+      "default": false
+    },
+    "link": {
+      "type": "string",
+      "description": "App route to open when clicked"
+    },
+    "scheduled_for": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the notification is relevant"
+    }
+  },
+  "required": [
+    "title",
+    "message"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

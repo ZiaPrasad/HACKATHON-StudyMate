@@ -1,0 +1,41 @@
+{
+  "name": "Subject",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Subject name"
+    },
+    "code": {
+      "type": "string",
+      "description": "Subject code"
+    },
+    "faculty_name": {
+      "type": "string",
+      "description": "Faculty / professor name"
+    },
+    "credits": {
+      "type": "number",
+      "description": "Credit hours"
+    },
+    "color": {
+      "type": "string",
+      "description": "Hex color used for the subject across the app",
+      "default": "#6366f1"
+    }
+  },
+  "required": [
+    "name"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

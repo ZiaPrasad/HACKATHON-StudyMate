@@ -1,0 +1,40 @@
+{
+  "name": "Note",
+  "type": "object",
+  "properties": {
+    "subject_id": {
+      "type": "string",
+      "description": "Reference to the subject"
+    },
+    "subject_name": {
+      "type": "string",
+      "description": "Denormalized subject name"
+    },
+    "title": {
+      "type": "string",
+      "description": "Note title"
+    },
+    "content": {
+      "type": "string",
+      "description": "Note content (rich text / markdown)"
+    },
+    "file_url": {
+      "type": "string",
+      "description": "Optional attached file URL"
+    }
+  },
+  "required": [
+    "title"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

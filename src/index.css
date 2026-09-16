@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* StudyMate blue design system — built around the official logo:
+       white + very light blue surfaces, navy text, royal blue primaries,
+       bright blue accents. */
+    --background: 0 0% 100%;
+    --foreground: 216 56% 16%;
+    --card: 0 0% 100%;
+    --card-foreground: 216 56% 16%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 216 56% 16%;
+    --primary: 214 98% 52%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 213 94% 95%;
+    --secondary-foreground: 216 56% 16%;
+    --muted: 212 60% 96%;
+    --muted-foreground: 215 25% 42%;
+    --accent: 209 100% 92%;
+    --accent-foreground: 216 60% 22%;
+    --destructive: 0 84% 58%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 213 44% 87%;
+    --input: 213 44% 87%;
+    --ring: 214 98% 52%;
+    --chart-1: 214 98% 52%;
+    --chart-2: 199 89% 48%;
+    --chart-3: 224 76% 57%;
+    --chart-4: 187 85% 43%;
+    --chart-5: 216 65% 20%;
+    --radius: 0.75rem;
+    --font-heading: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --sidebar-background: 210 100% 99%;
+    --sidebar-foreground: 216 40% 28%;
+    --sidebar-primary: 214 98% 52%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 209 100% 92%;
+    --sidebar-accent-foreground: 216 60% 22%;
+    --sidebar-border: 213 44% 87%;
+    --sidebar-ring: 214 98% 52%;
+  }
+
+  .dark {
+    --background: 217 50% 7%;
+    --foreground: 210 40% 98%;
+    --card: 217 45% 10%;
+    --card-foreground: 210 40% 98%;
+    --popover: 217 45% 10%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 214 98% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 217 35% 16%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 35% 16%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 217 35% 20%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 217 30% 18%;
+    --input: 217 30% 18%;
+    --ring: 214 98% 60%;
+    --chart-1: 214 98% 60%;
+    --chart-2: 199 89% 55%;
+    --chart-3: 224 76% 65%;
+    --chart-4: 187 85% 50%;
+    --chart-5: 209 100% 92%;
+    --sidebar-background: 217 50% 7%;
+    --sidebar-foreground: 210 40% 95%;
+    --sidebar-primary: 214 98% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 217 35% 16%;
+    --sidebar-accent-foreground: 210 40% 95%;
+    --sidebar-border: 217 30% 18%;
+    --sidebar-ring: 214 98% 60%;
+  }
+}
+
+
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+}
+
+/* StudyMate assistant orb animations */
+@keyframes wave {
+  0%, 100% { transform: scaleY(0.4); }
+  50% { transform: scaleY(1); }
+}
+.wave-bar {
+  display: inline-block;
+  width: 4px;
+  border-radius: 9999px;
+  background: white;
+  animation: wave 1s ease-in-out infinite;
+}
+.wave-bar:nth-child(1) { height: 10px; animation-delay: 0s; }
+.wave-bar:nth-child(2) { height: 18px; animation-delay: 0.15s; }
+.wave-bar:nth-child(3) { height: 14px; animation-delay: 0.3s; }
+.wave-bar:nth-child(4) { height: 20px; animation-delay: 0.45s; }
+
+@keyframes orb-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+.orb-float {
+  animation: orb-float 3s ease-in-out infinite;
+}

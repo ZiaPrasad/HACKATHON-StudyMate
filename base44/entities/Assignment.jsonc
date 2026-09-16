@@ -1,0 +1,71 @@
+{
+  "name": "Assignment",
+  "type": "object",
+  "properties": {
+    "subject_id": {
+      "type": "string",
+      "description": "Reference to the subject"
+    },
+    "subject_name": {
+      "type": "string",
+      "description": "Denormalized subject name"
+    },
+    "title": {
+      "type": "string",
+      "description": "Assignment title"
+    },
+    "description": {
+      "type": "string",
+      "description": "Assignment details"
+    },
+    "due_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Due date"
+    },
+    "priority": {
+      "type": "string",
+      "description": "Priority",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "default": "medium"
+    },
+    "status": {
+      "type": "string",
+      "description": "Status",
+      "enum": [
+        "pending",
+        "completed",
+        "overdue"
+      ],
+      "default": "pending"
+    },
+    "completed": {
+      "type": "boolean",
+      "description": "Whether completed",
+      "default": false
+    },
+    "completed_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When completed"
+    }
+  },
+  "required": [
+    "title"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}
