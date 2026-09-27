@@ -57,4 +57,4 @@ project/
 ├── vite.config.js
 └── README.mdckend/overview/local-dev/local-development-overview)
 
-Support: [https://app.base44.com/support](https://app.base44.com/support)
+
