@@ -8,8 +8,8 @@
   "theme_color": "#2575FC",
   "icons": [
     {
-      "src": "https://media.base44.com/images/public/6aa5372e2a8ad145b4249ca0/3366af95f_image.png",
-      "sizes": "192x192 512x512",
+      "src": "/logo.png",
+      "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     }
